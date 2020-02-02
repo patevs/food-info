@@ -1,8 +1,18 @@
-# ------------------ #
-# 1_requests/run.ps1 #
-# ------------------ #
+# ----------- #
+# src/run.ps1 #
+# ----------- #
 
 # Compile and execute a C# program
+
+# --------------------------------------------------------------------------
+
+# Global Constants
+
+# C# Compiler
+# $csc = "C:\Windows\Microsoft.NET\Framework\v3.5\csc.exe"
+$csc = "C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe"
+
+$filename = "Food"
 
 # --------------------------------------------------------------------------
 
@@ -15,21 +25,31 @@ function CheckCommand($cmdname) {
     return [bool](Get-Command -Name $cmdname -ErrorAction SilentlyContinue)
 }
 
+# Compile the program
+function compile {
+  # $command = "$csc /nologo /t:exe /out:Food.exe Food.cs"
+  $command = "$csc /nologo /t:exe /out:$filename.exe $filename.cs"
+  Invoke-Expression $command
+}
+
+# Execute the program
+function execute {
+  # $command = "./Food"
+  $command = "./$filename"
+  Invoke-Expression $command
+}
+
 # --------------------------------------------------------------------------
 
 Write-Host @'
 
-  Compiling Examples.cs
-  ---------------------
+  Compiling Program
+  -----------------
 '@
 
 Write-Host "  * Detecting C# Compiler Installation... " # -NoNewLine
 
 # Verify C# compiler is installed and available
-
-# $csc = "C:\Windows\Microsoft.NET\Framework\v3.5\csc.exe"
-$csc = "C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe"
-
 
 if (CheckCommand $csc){
     # https://stackoverflow.com/questions/6338015/how-do-you-execute-an-arbitrary-native-command-from-a-string
@@ -42,19 +62,7 @@ if (CheckCommand $csc){
     exit
 }
 
-# Compile Example.cs
-
-function compile {
-  $command = "$csc /nologo /t:exe /out:Food.exe Food.cs"
-  Invoke-Expression $command
-}
-
-# Execute the program
-
-function execute {
-  $command = "./Food"
-  Invoke-Expression $command
-}
+# Compile and run the program
 
 compile
 execute
