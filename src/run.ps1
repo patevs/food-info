@@ -62,6 +62,12 @@ if (CheckCommand $csc){
     exit
 }
 
+Write-Host @'
+
+  Executing Program
+  -----------------
+'@
+
 # Compile and run the program
 
 compile
