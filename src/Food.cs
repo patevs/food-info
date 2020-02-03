@@ -28,11 +28,11 @@ namespace food_api
         // Load environment variables from .env file
         DotNetEnv.Env.Load();
         // Access environment variables
-        // string test = System.Environment.GetEnvironmentVariable("API_KEY");
+        string test = System.Environment.GetEnvironmentVariable("API_KEY");
         // Or using helper methods
-        // string test1 = DotNetEnv.Env.GetString("API_KEY", "Variable not found");
-        // Console.WriteLine(test);
-        // Console.WriteLine(test1);
+        string test1 = DotNetEnv.Env.GetString("API_KEY", "Variable not found");
+        Console.WriteLine(test);
+        Console.WriteLine(test1);
       }
 
       public static void GetRequest(string uri)
