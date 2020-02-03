@@ -6,4 +6,8 @@
     <RootNamespace>food_api</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="DotNetEnv" Version="1.4.0" />
+  </ItemGroup>
+
 </Project>
