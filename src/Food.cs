@@ -28,7 +28,8 @@ namespace food_api
         // Load environment variables from .env file
         DotNetEnv.Env.Load();
         // Access environment variables
-        string test = DotNetEnv.Env.GetString("TEST", "Variable not found");
+        string test = System.Environment.GetEnvironmentVariable("TEST");
+        // string test = DotNetEnv.Env.GetString("TEST", "Variable not found");
         Console.WriteLine(test);
         // string ip = System.Environment.GetEnvironmentVariable("IP");
         // Console.WriteLine(ip);
