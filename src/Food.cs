@@ -5,6 +5,7 @@
 using System;
 using System.IO;
 using System.Net;
+// using DotNetEnv;
 
 namespace food_api
 {
@@ -22,6 +23,12 @@ namespace food_api
       /***************
        * * FUNCTIONS *
        ***************/
+
+      private static void LoadEnv(){
+        DotNetEnv.Env.Load();
+        string val = DotNetEnv.Env.GetString("THIS_DOES_NOT_EXIST", "Variable not found");
+        Console.WriteLine(val);
+      }
 
       public static void GetRequest(string uri)
       {
@@ -51,11 +58,11 @@ namespace food_api
       {
         Console.WriteLine("\n --- FOOD DATABASE --- \n");
         // Load environment variables
-        DotNetEnv.Env.Load();
+        LoadEnv();
         // Construct request url
-        string uri = BuildRequest();
+        // string uri = BuildRequest();
         // Make get request
-        GetRequest(uri);
+        // GetRequest(uri);
       }
     }
 }
