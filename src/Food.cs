@@ -25,9 +25,14 @@ namespace food_api
        ***************/
 
       private static void LoadEnv(){
-        DotNetEnv.Env.Load();
-        string val = DotNetEnv.Env.GetString("THIS_DOES_NOT_EXIST", "Variable not found");
-        Console.WriteLine(val);
+        // Load environment variables from .env file
+        DotNetEnv.Env.Load("../.env");
+        // Access environment variables
+        // string ip = System.Environment.GetEnvironmentVariable("IP");
+        // Console.WriteLine(ip);
+        // Or using helper methods
+        // string val = DotNetEnv.Env.GetString("THIS_DOES_NOT_EXIST", "Variable not found");
+        // Console.WriteLine(val);
       }
 
       public static void GetRequest(string uri)
