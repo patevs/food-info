@@ -50,7 +50,9 @@ namespace food_api
       static void Main(string[] args)
       {
         Console.WriteLine("\n --- FOOD DATABASE --- \n");
-        // construct url
+        // Load environment variables
+        DotNetEnv.Env.Load();
+        // Construct request url
         string uri = BuildRequest();
         // Make get request
         GetRequest(uri);
