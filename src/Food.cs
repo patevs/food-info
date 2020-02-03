@@ -6,7 +6,7 @@ using System;
 using System.IO;
 using System.Net;
 
-namespace Food
+namespace food_api
 {
     class Program
     {
