@@ -13,5 +13,6 @@
 * [`CsConsoleFormat`](https://github.com/Athari/CsConsoleFormat)
 * [`Colorful.Console`](https://github.com/tomakita/Colorful.Console)
 * [`ConsoleTableExt`](https://github.com/minhhungit/ConsoleTableExt)
+* [`shellprogressbar`](https://github.com/Mpdreamz/shellprogressbar)
 
 ---
