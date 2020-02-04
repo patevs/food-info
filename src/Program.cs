@@ -1,5 +1,5 @@
 /**
- *  src/Food.cs
+ *  src/Program.cs
  */
 
 using System;
@@ -10,7 +10,7 @@ using Alba.CsConsoleFormat.Fluent;
 
 using Newtonsoft.Json.Linq;
 
-namespace food_api
+namespace food_app
 {
     class Program
     {
