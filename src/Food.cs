@@ -6,6 +6,8 @@ using System;
 using System.IO;
 using System.Net;
 
+using Alba.CsConsoleFormat.Fluent;
+
 namespace food_api
 {
     class Program
@@ -64,7 +66,9 @@ namespace food_api
 
       static void Main(string[] args)
       {
+        // Console.OutputEncoding = System.Text.Encoding.UTF8;
         Console.WriteLine("\n --- FOOD DATABASE --- \n");
+        Colors.WriteLine("Hello".Red(), "\n", "world!".Yellow());
         // Load environment variables
         LoadEnv();
         // Construct request url
