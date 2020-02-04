@@ -66,9 +66,11 @@ namespace food_api
 
       static void Main(string[] args)
       {
+        // Set encoding for ASCII graphics
         // Console.OutputEncoding = System.Text.Encoding.UTF8;
-        Console.WriteLine("\n --- FOOD DATABASE --- \n");
-        Colors.WriteLine("Hello".Red(), "\n", "world!".Yellow());
+        // Print welcome message
+        // Console.WriteLine("\n --- FOOD DATABASE --- \n");
+        Colors.WriteLine("\n --- ", "FOOD DATABASE".Green(), " --- \n");
         // Load environment variables
         LoadEnv();
         // Construct request url
