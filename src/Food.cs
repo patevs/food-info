@@ -57,9 +57,18 @@ namespace food_api
         using(StreamReader reader = new StreamReader(stream))
         {
           string result = reader.ReadToEnd();
-          Console.WriteLine(result);
+          // Console.WriteLine(result);
           // return result;
+          ParseJson(result);
         }
+      }
+
+      private static void ParseJson(string json){
+        dynamic item = JObject.Parse(json);
+        string text = item.text;
+        string details = item.parsed[0].food.label;
+        Console.WriteLine(text);
+        Console.WriteLine(details);
       }
 
       /*****************************
@@ -76,9 +85,9 @@ namespace food_api
         // Load environment variables
         LoadEnv();
         // Construct request url
-        // string uri = BuildRequest();
+        string uri = BuildRequest();
         // Make get request
-        // GetRequest(uri);
+        GetRequest(uri);
       }
     }
 }
