@@ -12,10 +12,10 @@
 ## Packages
 
 * [`dotnet-env`](https://github.com/tonerdo/dotnet-env)
+
+[](.)
+
 * [`Colorful.Console`](https://github.com/tomakita/Colorful.Console)
-
-[]()
-
 * [`CsConsoleFormat`](https://github.com/Athari/CsConsoleFormat)
 * [`RestSharp`](https://github.com/restsharp/RestSharp)
 * [`Newtonsoft.Json`](https://github.com/JamesNK/Newtonsoft.Json)
