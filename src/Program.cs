@@ -42,8 +42,9 @@ namespace food_app
         // string test = DotNetEnv.Env.GetString("API_KEY", "Variable not found");
       }
 
-      private static string BuildRequest(){
-        string uri = @API_ENDPOINT + "?ingr=apple&app_id=" + APP_ID + "&app_key=" + APP_KEY;
+      private static string BuildRequest(string query){
+        // string uri = @API_ENDPOINT + "?ingr=apple&app_id=" + APP_ID + "&app_key=" + APP_KEY;
+        string uri = @API_ENDPOINT + "?ingr=" + query + "&app_id=" + APP_ID + "&app_key=" + APP_KEY;
         return uri;
       }
 
@@ -84,8 +85,12 @@ namespace food_app
         Colors.WriteLine("\n --- ", "FOOD DATABASE".Green(), " --- \n");
         // Load environment variables
         LoadEnv();
+        // Prints string out to the console with a line break (Write = No Line Break)
+        Console.WriteLine("Enter your search : ");
+        // Accept input from the user
+        string query = Console.ReadLine();
         // Construct request url
-        string uri = BuildRequest();
+        string uri = BuildRequest(query);
         // Make get request
         GetRequest(uri);
       }
