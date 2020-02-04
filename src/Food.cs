@@ -66,7 +66,7 @@ namespace food_api
       private static void ParseJson(string json){
         dynamic item = JObject.Parse(json);
         string text = item.text;
-        string details = item.parsed[0].food.label;
+        string details = item.parsed[0].food.nutrients;
         Console.WriteLine(text);
         Console.WriteLine(details);
       }
