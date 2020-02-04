@@ -8,6 +8,8 @@ using System.Net;
 
 using Alba.CsConsoleFormat.Fluent;
 
+using Newtonsoft.Json.Linq;
+
 namespace food_api
 {
     class Program
@@ -40,7 +42,12 @@ namespace food_api
         // string test = DotNetEnv.Env.GetString("API_KEY", "Variable not found");
       }
 
-      public static void GetRequest(string uri)
+      private static string BuildRequest(){
+        string uri = @API_ENDPOINT + "?ingr=apple&app_id=" + APP_ID + "&app_key=" + APP_KEY;
+        return uri;
+      }
+
+      private static void GetRequest(string uri)
       {
         HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
         // request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
@@ -53,11 +60,6 @@ namespace food_api
           Console.WriteLine(result);
           // return result;
         }
-      }
-
-      public static string BuildRequest(){
-        string uri = @API_ENDPOINT + "?ingr=apple&app_id=" + APP_ID + "&app_key=" + APP_KEY;
-        return uri;
       }
 
       /*****************************
