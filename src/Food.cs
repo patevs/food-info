@@ -5,7 +5,6 @@
 using System;
 using System.IO;
 using System.Net;
-// using DotNetEnv;
 
 namespace food_api
 {
@@ -16,9 +15,14 @@ namespace food_api
        * * CONSTANTS *
        ***************/
 
-      private const string APP_ID = "cdfcb58a";
-      private const string APP_KEY = "1bf534f78ce5ecb6542063ce18f2db89";
       private const string API_ENDPOINT = "https://api.edamam.com/api/food-database/parser";
+
+      /*************
+       * * GLOBALS *
+       *************/
+
+      private static string APP_ID;
+      private static string APP_KEY;
 
       /***************
        * * FUNCTIONS *
@@ -28,11 +32,10 @@ namespace food_api
         // Load environment variables from .env file
         DotNetEnv.Env.Load();
         // Access environment variables
-        string test = System.Environment.GetEnvironmentVariable("API_KEY");
+        APP_ID = System.Environment.GetEnvironmentVariable("APP_ID");
+        APP_KEY = System.Environment.GetEnvironmentVariable("APP_KEY");
         // Or using helper methods
-        string test1 = DotNetEnv.Env.GetString("API_KEY", "Variable not found");
-        Console.WriteLine(test);
-        Console.WriteLine(test1);
+        // string test = DotNetEnv.Env.GetString("API_KEY", "Variable not found");
       }
 
       public static void GetRequest(string uri)
