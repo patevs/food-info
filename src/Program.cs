@@ -40,10 +40,17 @@ namespace food_app
         ConsoleTable table = new ConsoleTable("Name", "Quanity", "Unit");
 
         JToken energy = details["ENERC_KCAL"];
-        // Console.WriteLine(energy);
+        JToken protien = details["PROCNT"];
+        JToken fat = details["FAT"];
+        JToken carbs = details["CHOCDF"];
+        JToken fiber = details["FIBTG"];
 
         table
-          .AddRow("Energy", energy, "kcal");
+          .AddRow("Energy", energy, "kcal")
+          .AddRow("Protien", protien, "g")
+          .AddRow("Fat", fat, "g")
+          .AddRow("Carbs", carbs, "g")
+          .AddRow("Fiber", fiber, "g");
 
         // table
         //   .AddRow(1, 2, 3)
@@ -95,6 +102,7 @@ namespace food_app
         Console.ResetColor();
         Console.WriteLine();
         // Check query length
+        // TODO: Ensure query is not a number
         if(query.Length < 2) {
           Colors.WriteLine(
             "  ",
