@@ -56,10 +56,12 @@ namespace food_app
         Console.WriteLine(details);
       }
 
-      private static string BuildRequest(string query){
+      private static string BuildRequest(string query)
+      {
         // string uri = @API_ENDPOINT + "?ingr=apple&app_id=" + APP_ID + "&app_key=" + APP_KEY;
-        string uri = @API_ENDPOINT + "?ingr=" + query + "&app_id=" + APP_ID + "&app_key=" + APP_KEY;
-        return uri;
+        // string uri = @API_ENDPOINT + "?ingr=" + query + "&app_id=" + APP_ID + "&app_key=" + APP_KEY;
+        // return uri;
+        return @API_ENDPOINT + "?ingr=" + query + "&app_id=" + APP_ID + "&app_key=" + APP_KEY;
       }
 
       private static string GetQuery()
