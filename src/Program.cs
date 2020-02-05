@@ -73,9 +73,9 @@ namespace food_app
         // Check query length
         if(query.Length < 2) {
           Colors.WriteLine(
-            " ",
+            "  ",
             " ERROR ".White().OnRed(),
-            " Query must be greater than 2 letters!");
+            " Query must be greater than 2 letters! \n");
         }
         return query;
       }
@@ -84,7 +84,11 @@ namespace food_app
       {
         PrintWelcome();
         // Get user query
-        string query = GetQuery();
+        string query = "";
+        while(query.Length < 2)
+        {
+          query = GetQuery();
+        }
         // Construct request url
         string uri = BuildRequest(query);
         // Make get request
