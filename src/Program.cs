@@ -100,7 +100,10 @@ namespace food_app
         Console.ResetColor();
         // Print welcome message
         // Console.WriteLine("\n --- FOOD DATABASE --- \n");
-        Colors.WriteLine("\n --- ", " WELCOME TO THE FOOD DATABASE ".Black().OnGreen(), " --- \n");
+        Colors.WriteLine(
+          "\n ---- ",
+          " WELCOME TO THE FOOD DATABASE ".Black().OnGreen(),
+          " ---- \n");
       }
 
       /*****************************
