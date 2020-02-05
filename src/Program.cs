@@ -72,21 +72,19 @@ namespace food_app
         Console.WriteLine(details);
       }
 
-      /*****************************
-       * * APPLICATION ENTRY POINT *
-       *****************************/
-
-      static void Main(string[] args)
-      {
+      private static void Init(){
+        // Load environment variables
+        LoadEnv();
         // Set encoding for ASCII graphics
         // Console.OutputEncoding = System.Text.Encoding.UTF8;
         // Clear the console
         Console.Clear();
         // Print welcome message
         // Console.WriteLine("\n --- FOOD DATABASE --- \n");
-        Colors.WriteLine("\n --- ", "WELCOME TO THE FOOD DATABASE".Green(), " --- \n");
-        // Load environment variables
-        LoadEnv();
+        Colors.WriteLine("\n --- ", " WELCOME TO THE FOOD DATABASE ".Black().OnGreen(), " --- \n");
+      }
+
+      private static void Run(){
         Console.Write(" Enter a food : ");
         // Accept input from the user
         string query = Console.ReadLine();
@@ -94,6 +92,18 @@ namespace food_app
         string uri = BuildRequest(query);
         // Make get request
         GetRequest(uri);
+      }
+
+      /*****************************
+       * * APPLICATION ENTRY POINT *
+       *****************************/
+
+      static void Main(string[] args)
+      {
+        // Initialize
+        Init();
+        // Main loop
+        Run();
       }
     }
 }
