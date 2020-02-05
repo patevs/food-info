@@ -82,7 +82,9 @@ namespace food_app
         Console.WriteLine();
         // Check query length
         if(query.Length < 2) {
-          Colors.WriteLine(" Query must be greater than 2 letters... ".Red());
+          Colors.WriteLine(
+            " Error: ".White().OnRed(),
+            "Query must be greater than 2 letters!");
         }
         // Construct request url
         string uri = BuildRequest(query);
