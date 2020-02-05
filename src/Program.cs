@@ -50,10 +50,6 @@ namespace food_app
         using(Stream stream = response.GetResponseStream())
         using(StreamReader reader = new StreamReader(stream))
         {
-          // string result = reader.ReadToEnd();
-          // Console.WriteLine(result);
-          // return result;
-          // ParseJson(result);
           return reader.ReadToEnd();
         }
       }
