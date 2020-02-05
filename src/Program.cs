@@ -84,14 +84,23 @@ namespace food_app
         Colors.WriteLine("\n --- ", " WELCOME TO THE FOOD DATABASE ".Black().OnGreen(), " --- \n");
       }
 
-      private static void Run(){
-        Console.Write(" Enter a food : ");
+      private static void Run()
+      {
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.Write(" Enter a food item to lookup : ");
+        Console.ForegroundColor = ConsoleColor.Green;
         // Accept input from the user
         string query = Console.ReadLine();
-        // Construct request url
-        string uri = BuildRequest(query);
-        // Make get request
-        GetRequest(uri);
+        Console.ForegroundColor = ConsoleColor.White;
+        // Check query length
+        if(query.Length < 2) {
+          Colors.WriteLine(" Query must be greater than 2 letters... ".Red());
+        } else {
+          // Construct request url
+          string uri = BuildRequest(query);
+          // Make get request
+          GetRequest(uri);
+        }
       }
 
       /*****************************
