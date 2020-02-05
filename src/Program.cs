@@ -79,6 +79,7 @@ namespace food_app
         // Console.OutputEncoding = System.Text.Encoding.UTF8;
         // Clear the console
         Console.Clear();
+        Console.ResetColor();
         // Print welcome message
         // Console.WriteLine("\n --- FOOD DATABASE --- \n");
         Colors.WriteLine("\n --- ", " WELCOME TO THE FOOD DATABASE ".Black().OnGreen(), " --- \n");
@@ -86,12 +87,14 @@ namespace food_app
 
       private static void Run()
       {
-        Console.ForegroundColor = ConsoleColor.White;
+        // Console.ForegroundColor = ConsoleColor.White;
         Console.Write(" Enter a food item to lookup : ");
         Console.ForegroundColor = ConsoleColor.Green;
         // Accept input from the user
         string query = Console.ReadLine();
-        Console.ForegroundColor = ConsoleColor.White;
+        Console.ResetColor();
+        Console.WriteLine();
+        // Console.ForegroundColor = ConsoleColor.White;
         // Check query length
         if(query.Length < 2) {
           Colors.WriteLine(" Query must be greater than 2 letters... ".Red());
