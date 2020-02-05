@@ -43,7 +43,12 @@ namespace food_app
 
       private static string GetRequest(string uri)
       {
-        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
+        Colors.WriteLine(
+          "  ",
+          " INFO ".White().OnBlue(),
+          " Performing GET Request... \n"
+        );
+        HttpWebRequest request = (HttpWebRequest) WebRequest.Create(uri);
         // request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
 
         using(HttpWebResponse response = (HttpWebResponse)request.GetResponse())
@@ -72,7 +77,8 @@ namespace food_app
           Colors.WriteLine(
             "  ",
             " ERROR ".White().OnRed(),
-            " Query must be greater than 2 letters! \n");
+            " Query must be greater than 2 letters! \n"
+          );
         }
         return query;
       }
@@ -103,7 +109,8 @@ namespace food_app
         Colors.WriteLine(
           "\n ---- ",
           " WELCOME TO THE FOOD DATABASE ".Black().OnGreen(),
-          " ---- \n");
+          " ---- \n"
+        );
       }
 
       private static void LoadEnv()
