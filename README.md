@@ -14,12 +14,12 @@
 * [`dotnet-env`](https://github.com/tonerdo/dotnet-env)
 * [`CsConsoleFormat`](https://github.com/Athari/CsConsoleFormat)
 * [`Newtonsoft.Json`](https://github.com/JamesNK/Newtonsoft.Json)
+* [`ConsoleTables`](https://github.com/khalidabuhakmeh/ConsoleTables)
 
 [](.)
 
 * [`ConsoleFramework`](https://github.com/elw00d/consoleframework)
 * [`Colorful.Console`](https://github.com/tomakita/Colorful.Console)
-* [`ConsoleTables`](https://github.com/khalidabuhakmeh/ConsoleTables)
 * [`RestSharp`](https://github.com/restsharp/RestSharp)
 * [`gui.cs`](https://github.com/migueldeicaza/gui.cs)
 * [`ConsoleTableExt`](https://github.com/minhhungit/ConsoleTableExt)
