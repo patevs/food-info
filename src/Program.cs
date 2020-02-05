@@ -10,6 +10,8 @@ using Alba.CsConsoleFormat.Fluent;
 
 using Newtonsoft.Json.Linq;
 
+using ConsoleTables;
+
 namespace food_app
 {
     class Program
@@ -32,13 +34,33 @@ namespace food_app
        * * FUNCTIONS *
        ***************/
 
+      private static void DisplayResult(string name, JObject details)
+      {
+        // ..
+        ConsoleTable table = new ConsoleTable("Name", "Quanity", "Unit");
+
+        JToken energy = details["ENERC_KCAL"];
+        // Console.WriteLine(energy);
+
+        table
+          .AddRow("Energy", energy, "kcal");
+
+        // table
+        //   .AddRow(1, 2, 3)
+        //   .AddRow("this line should be longer", "yes it is", "oh");
+
+        table.Write();
+        Console.WriteLine();
+      }
+
       private static void ParseJson(string json)
       {
         dynamic item = JObject.Parse(json);
-        string text = item.text;
+        string name = item.text;
         JObject details = item.parsed[0].food.nutrients;
-        Console.WriteLine(text);
+        Console.WriteLine(name);
         Console.WriteLine(details);
+        DisplayResult(name, details);
       }
 
       private static string GetRequest(string uri)
