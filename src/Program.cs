@@ -83,8 +83,9 @@ namespace food_app
         // Check query length
         if(query.Length < 2) {
           Colors.WriteLine(
-            " Error: ".White().OnRed(),
-            "Query must be greater than 2 letters!");
+            " ",
+            " ERROR ".White().OnRed(),
+            " Query must be greater than 2 letters!");
         }
         // Construct request url
         string uri = BuildRequest(query);
@@ -100,6 +101,8 @@ namespace food_app
         // Clear the console
         Console.Clear();
         Console.ResetColor();
+        // Set console title
+        Console.Title = "FOOD DATABASE";
         // Print welcome message
         // Console.WriteLine("\n --- FOOD DATABASE --- \n");
         Colors.WriteLine(
