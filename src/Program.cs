@@ -72,19 +72,6 @@ namespace food_app
         Console.WriteLine(details);
       }
 
-      private static void Init(){
-        // Load environment variables
-        LoadEnv();
-        // Set encoding for ASCII graphics
-        // Console.OutputEncoding = System.Text.Encoding.UTF8;
-        // Clear the console
-        Console.Clear();
-        Console.ResetColor();
-        // Print welcome message
-        // Console.WriteLine("\n --- FOOD DATABASE --- \n");
-        Colors.WriteLine("\n --- ", " WELCOME TO THE FOOD DATABASE ".Black().OnGreen(), " --- \n");
-      }
-
       private static void Run()
       {
         Console.Write(" Enter a food item to lookup : ");
@@ -96,12 +83,24 @@ namespace food_app
         // Check query length
         if(query.Length < 2) {
           Colors.WriteLine(" Query must be greater than 2 letters... ".Red());
-        } else {
-          // Construct request url
-          string uri = BuildRequest(query);
-          // Make get request
-          GetRequest(uri);
         }
+        // Construct request url
+        string uri = BuildRequest(query);
+        // Make get request
+        GetRequest(uri);
+      }
+
+      private static void Init(){
+        // Load environment variables
+        LoadEnv();
+        // Set encoding for ASCII graphics
+        // Console.OutputEncoding = System.Text.Encoding.UTF8;
+        // Clear the console
+        Console.Clear();
+        Console.ResetColor();
+        // Print welcome message
+        // Console.WriteLine("\n --- FOOD DATABASE --- \n");
+        Colors.WriteLine("\n --- ", " WELCOME TO THE FOOD DATABASE ".Black().OnGreen(), " --- \n");
       }
 
       /*****************************
