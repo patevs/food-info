@@ -32,22 +32,6 @@ namespace food_app
        * * FUNCTIONS *
        ***************/
 
-      private static void LoadEnv(){
-        // Load environment variables from .env file
-        DotNetEnv.Env.Load();
-        // Access environment variables
-        APP_ID = System.Environment.GetEnvironmentVariable("APP_ID");
-        APP_KEY = System.Environment.GetEnvironmentVariable("APP_KEY");
-        // Or using helper methods
-        // string test = DotNetEnv.Env.GetString("API_KEY", "Variable not found");
-      }
-
-      private static string BuildRequest(string query){
-        // string uri = @API_ENDPOINT + "?ingr=apple&app_id=" + APP_ID + "&app_key=" + APP_KEY;
-        string uri = @API_ENDPOINT + "?ingr=" + query + "&app_id=" + APP_ID + "&app_key=" + APP_KEY;
-        return uri;
-      }
-
       private static void GetRequest(string uri)
       {
         HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
@@ -72,7 +56,13 @@ namespace food_app
         Console.WriteLine(details);
       }
 
-      private static void Run()
+      private static string BuildRequest(string query){
+        // string uri = @API_ENDPOINT + "?ingr=apple&app_id=" + APP_ID + "&app_key=" + APP_KEY;
+        string uri = @API_ENDPOINT + "?ingr=" + query + "&app_id=" + APP_ID + "&app_key=" + APP_KEY;
+        return uri;
+      }
+
+      private static string GetQuery()
       {
         Console.Write(" Enter a food item to lookup : ");
         Console.ForegroundColor = ConsoleColor.Green;
@@ -87,13 +77,45 @@ namespace food_app
             " ERROR ".White().OnRed(),
             " Query must be greater than 2 letters!");
         }
+        return query;
+      }
+
+      private static void Run()
+      {
+        PrintWelcome();
+        // Get user query
+        string query = GetQuery();
         // Construct request url
         string uri = BuildRequest(query);
         // Make get request
         GetRequest(uri);
       }
 
-      private static void Init(){
+      private static void PrintWelcome()
+      {
+        // Clear the console
+        Console.Clear();
+        // Print welcome message
+        // Console.WriteLine("\n --- FOOD DATABASE --- \n");
+        Colors.WriteLine(
+          "\n ---- ",
+          " WELCOME TO THE FOOD DATABASE ".Black().OnGreen(),
+          " ---- \n");
+      }
+
+      private static void LoadEnv()
+      {
+        // Load environment variables from .env file
+        DotNetEnv.Env.Load();
+        // Access environment variables
+        APP_ID = System.Environment.GetEnvironmentVariable("APP_ID");
+        APP_KEY = System.Environment.GetEnvironmentVariable("APP_KEY");
+        // Or using helper methods
+        // DotNetEnv.Env.GetString("APP_ID", "APP_ID VARIABLE NOT FOUND!");
+      }
+
+      private static void Init()
+      {
         // Load environment variables
         LoadEnv();
         // Set encoding for ASCII graphics
@@ -103,12 +125,6 @@ namespace food_app
         Console.ResetColor();
         // Set console title
         Console.Title = "FOOD DATABASE";
-        // Print welcome message
-        // Console.WriteLine("\n --- FOOD DATABASE --- \n");
-        Colors.WriteLine(
-          "\n ---- ",
-          " WELCOME TO THE FOOD DATABASE ".Black().OnGreen(),
-          " ---- \n");
       }
 
       /*****************************
