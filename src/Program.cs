@@ -80,13 +80,14 @@ namespace food_app
       {
         // Set encoding for ASCII graphics
         // Console.OutputEncoding = System.Text.Encoding.UTF8;
+        // Clear the console
+        Console.Clear();
         // Print welcome message
         // Console.WriteLine("\n --- FOOD DATABASE --- \n");
-        Colors.WriteLine("\n --- ", "FOOD DATABASE".Green(), " --- \n");
+        Colors.WriteLine("\n --- ", "WELCOME TO THE FOOD DATABASE".Green(), " --- \n");
         // Load environment variables
         LoadEnv();
-        // Prints string out to the console with a line break (Write = No Line Break)
-        Console.WriteLine("Enter your search : ");
+        Console.Write(" Enter a food : ");
         // Accept input from the user
         string query = Console.ReadLine();
         // Construct request url
