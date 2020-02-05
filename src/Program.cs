@@ -32,7 +32,16 @@ namespace food_app
        * * FUNCTIONS *
        ***************/
 
-      private static void GetRequest(string uri)
+      private static void ParseJson(string json)
+      {
+        dynamic item = JObject.Parse(json);
+        string text = item.text;
+        JObject details = item.parsed[0].food.nutrients;
+        Console.WriteLine(text);
+        Console.WriteLine(details);
+      }
+
+      private static string GetRequest(string uri)
       {
         HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
         // request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
@@ -41,26 +50,16 @@ namespace food_app
         using(Stream stream = response.GetResponseStream())
         using(StreamReader reader = new StreamReader(stream))
         {
-          string result = reader.ReadToEnd();
+          // string result = reader.ReadToEnd();
           // Console.WriteLine(result);
           // return result;
-          ParseJson(result);
+          // ParseJson(result);
+          return reader.ReadToEnd();
         }
-      }
-
-      private static void ParseJson(string json){
-        dynamic item = JObject.Parse(json);
-        string text = item.text;
-        JObject details = item.parsed[0].food.nutrients;
-        Console.WriteLine(text);
-        Console.WriteLine(details);
       }
 
       private static string BuildRequest(string query)
       {
-        // string uri = @API_ENDPOINT + "?ingr=apple&app_id=" + APP_ID + "&app_key=" + APP_KEY;
-        // string uri = @API_ENDPOINT + "?ingr=" + query + "&app_id=" + APP_ID + "&app_key=" + APP_KEY;
-        // return uri;
         return @API_ENDPOINT + "?ingr=" + query + "&app_id=" + APP_ID + "&app_key=" + APP_KEY;
       }
 
@@ -94,7 +93,9 @@ namespace food_app
         // Construct request url
         string uri = BuildRequest(query);
         // Make get request
-        GetRequest(uri);
+        string result = GetRequest(uri);
+        // parse the result
+        ParseJson(result);
       }
 
       private static void PrintWelcome()
