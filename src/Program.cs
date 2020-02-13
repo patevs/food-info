@@ -12,7 +12,7 @@ using Newtonsoft.Json.Linq;
 
 using ConsoleTables;
 
-namespace food_app
+namespace food_info
 {
     class Program
     {
