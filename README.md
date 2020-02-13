@@ -13,16 +13,21 @@
 
 * [`dotnet-env`](https://github.com/tonerdo/dotnet-env)
 * [`CsConsoleFormat`](https://github.com/Athari/CsConsoleFormat)
+  * [`Colorful.Console`](https://github.com/tomakita/Colorful.Console)
+  * [`ConsoleFramework`](https://github.com/elw00d/consoleframework)
 * [`Newtonsoft.Json`](https://github.com/JamesNK/Newtonsoft.Json)
 * [`ConsoleTables`](https://github.com/khalidabuhakmeh/ConsoleTables)
+  * [`ConsoleTableExt`](https://github.com/minhhungit/ConsoleTableExt)
 
 [](.)
 
-* [`ConsoleFramework`](https://github.com/elw00d/consoleframework)
-* [`Colorful.Console`](https://github.com/tomakita/Colorful.Console)
 * [`RestSharp`](https://github.com/restsharp/RestSharp)
 * [`gui.cs`](https://github.com/migueldeicaza/gui.cs)
-* [`ConsoleTableExt`](https://github.com/minhhungit/ConsoleTableExt)
 * [`ShellProgressBar`](https://github.com/Mpdreamz/shellprogressbar)
+
+[](.)
+
+* [`edge`](https://github.com/tjanczuk/edge)
+* [`ClearScript`](https://github.com/Microsoft/ClearScript)
 
 ---
