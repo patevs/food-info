@@ -103,13 +103,6 @@ namespace food_info
         // TODO: Ensure query is not a number
         if(query.Length < 2) {
           log.Error("Query must be greater than 2 letters!");
-          /*
-          Colors.WriteLine(
-            "  ",
-            " ERROR ".White().OnRed(),
-            " Query must be greater than 2 letters! \n"
-          );
-          */
         }
         return query;
       }
