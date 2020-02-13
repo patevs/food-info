@@ -6,8 +6,6 @@ using System;
 using System.IO;
 using System.Net;
 
-using Alba.CsConsoleFormat.Fluent;
-
 using Newtonsoft.Json.Linq;
 
 using ConsoleTables;
