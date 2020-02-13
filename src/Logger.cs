@@ -24,7 +24,7 @@ namespace food_info
       {
         Colors.WriteLine(
           "  ",
-          " INFO ".White().OnRed(),
+          " ERROR ".White().OnRed(),
           " ", message, "\n"
         );
       }
