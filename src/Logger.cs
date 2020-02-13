@@ -20,6 +20,15 @@ namespace food_info
         );
       }
 
+      public void Error(string message)
+      {
+        Colors.WriteLine(
+          "  ",
+          " INFO ".White().OnRed(),
+          " ", message, "\n"
+        );
+      }
+
       public void PrintWelcome()
       {
         // Clear the console
