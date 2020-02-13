@@ -74,11 +74,14 @@ namespace food_info
 
       private static string GetRequest(string uri)
       {
+        /*
         Colors.WriteLine(
           "  ",
           " INFO ".White().OnBlue(),
           " Performing GET Request... \n"
         );
+        */
+        log.Info("Performing GET Request...");
         HttpWebRequest request = (HttpWebRequest) WebRequest.Create(uri);
         // request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
 

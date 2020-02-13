@@ -11,6 +11,15 @@ namespace food_info
 {
   class Logger
   {
+      public void Info(string message)
+      {
+        Colors.WriteLine(
+          "  ",
+          " INFO ".White().OnBlue(),
+          " ", message, "\n"
+        );
+      }
+
       public void PrintWelcome()
       {
         // Clear the console
