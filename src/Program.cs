@@ -162,7 +162,6 @@ namespace food_info
 
       static void Main(string[] args)
       {
-        // Program prog = new Program();
         // Initialize
         Program.Init();
         // Main loop
