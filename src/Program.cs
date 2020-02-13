@@ -132,21 +132,6 @@ namespace food_info
         ParseJson(result);
       }
 
-      /*
-      private static void PrintWelcome()
-      {
-        // Clear the console
-        Console.Clear();
-        // Print welcome message
-        // Console.WriteLine("\n --- FOOD DATABASE --- \n");
-        Colors.WriteLine(
-          "\n ---- ",
-          " WELCOME TO THE FOOD DATABASE ".Black().OnGreen(),
-          " ---- \n"
-        );
-      }
-      */
-
       private static void LoadEnv()
       {
         // Load environment variables from .env file
