@@ -1,30 +1,21 @@
 {
-	"name": "food-app",
+	"name": "food-info",
 	"version": "0.0.0",
-	"description": "Food Info App",
+	"description": "Food Information Database App",
 	"license": "MIT",
-	"repository": "patevs/food-app",
+	"repository": "https://www.github.com/patevs/food-info.git",
 	"author": {
 		"name": "patevs",
 		"email": "ppevans11@gmail.com",
 		"url": "https://www.github.com/patevs"
 	},
-	"bin": "cli.js",
+	"bin": "js/cli.js",
 	"engines": {
 		"node": ">=8"
 	},
 	"scripts": {
 		"test": "xo && ava"
 	},
-	"files": [
-		"index.js",
-		"cli.js"
-	],
-	"keywords": [
-		"cli-app",
-		"cli",
-		""
-	],
 	"dependencies": {
 		"meow": "^5.0.0"
 	},
