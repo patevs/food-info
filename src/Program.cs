@@ -30,6 +30,8 @@ namespace food_info
       private static string APP_ID;
       private static string APP_KEY;
 
+      private static Logger log;
+
       /***************
        * * FUNCTIONS *
        ***************/
@@ -115,9 +117,7 @@ namespace food_info
 
       private static void Run()
       {
-        Logger log = new Logger();
         log.PrintWelcome();
-        // PrintWelcome();
         // Get user query
         string query = "";
         while(query.Length < 2)
@@ -154,6 +154,7 @@ namespace food_info
         Console.ResetColor();
         // Set console title
         Console.Title = "FOOD DATABASE";
+        log = new Logger();
       }
 
       /*****************************
