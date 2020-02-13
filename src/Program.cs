@@ -173,10 +173,11 @@ namespace food_info
 
       static void Main(string[] args)
       {
+        // Program prog = new Program();
         // Initialize
-        Init();
+        Program.Init();
         // Main loop
-        Run();
+        Program.Run();
       }
     }
 }
