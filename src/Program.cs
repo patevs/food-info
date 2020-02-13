@@ -115,7 +115,9 @@ namespace food_info
 
       private static void Run()
       {
-        PrintWelcome();
+        Logger log = new Logger();
+        log.PrintWelcome();
+        // PrintWelcome();
         // Get user query
         string query = "";
         while(query.Length < 2)
@@ -130,6 +132,7 @@ namespace food_info
         ParseJson(result);
       }
 
+      /*
       private static void PrintWelcome()
       {
         // Clear the console
@@ -142,6 +145,7 @@ namespace food_info
           " ---- \n"
         );
       }
+      */
 
       private static void LoadEnv()
       {
