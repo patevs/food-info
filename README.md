@@ -1,4 +1,4 @@
-# Food App
+# Food Information Database
 
 ---
 
