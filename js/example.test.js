@@ -6,7 +6,7 @@ test('title', t => {
 		foodApp(123);
 	}, {
 		instanceOf: TypeError,
-		message: 'Expected a string, got number'
+		message: 'Expected a string, got number',
 	});
 
 	t.is(foodApp('unicorns'), 'unicorns & rainbows');
